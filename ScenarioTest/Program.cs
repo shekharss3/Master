@@ -14,16 +14,25 @@ namespace ScenarioTest
         int c = 0, a = 0, b = 0;
 
         [Given(@"I have entered (.*) and (.*) into the calculator")]
-        public void GivenIHaveEnteredIntoTheCalculator(int a, int b)
+        public void GivenIHaveEnteredIntoTheCalculator(int a1, int b1)
         {
-            c = a + b;
+            a = a1;
+            b = b1;
+            
         }
 
         [When(@"I press add")]
         public void WhenIPressAdd()
         {
-          //  ScenarioContext.Current.Pending();
+            c = a + b;
         }
+
+        [When(@"I press subtract")]
+        public void WhenIPressSubtract()
+        {
+            c = a - b;
+        }
+
 
         [Then(@"the result should be (.*) on the screen")]
         public void ThenTheResultShouldBeOnTheScreen(int cc)

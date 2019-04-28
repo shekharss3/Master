@@ -10,5 +10,9 @@ Scenario: Add two numbers
 	Then the result should be 120 on the screen
 
 
-
+@test1
+Scenario: Subtract two numbers
+	Given I have entered 70 and 50 into the calculator
+	When I press subtract
+	Then the result should be 20 on the screen
 
